@@ -1,7 +1,11 @@
 apiVersion: v1
+
 kind: Pod
+
 metadata: 
   name: nginx-pod
+  lables:
+    app: demoapp
 
 spec:
   containers:
