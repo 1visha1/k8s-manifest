@@ -7,5 +7,5 @@ spec:
   - port: 8080
     targetPort: 80
   selector:
-    app: demoapp  
+    app: nginx  
   type: NodePort
