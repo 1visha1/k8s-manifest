@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myreplica
+
+spec:
+  replicas: 2
+  selector:
+    myname: vss
+  
+  template: 
+    metadata:
+      name: testRc1
+      labels:
+        myname: vss
+      
+    spec:
+      containers:
+      - name: c00
+        image: ubuntu
+        command: ["/bin/bash","-c","while true; do echo hello vss; sleep 5; done;"]
