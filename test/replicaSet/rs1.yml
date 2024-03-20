@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs
+spec:
+  replicas: 2
+  selector:
+    metadataExpressions:
+    - {key: myname, operator: In, values: [vss,Vss,VSS]}
+    - {key: env, operator: NotIn, values: [production]}
+
+  template:
+    metadata:
+      name: testPod7
+      labels: 
+        myname: vss
+      
+    spec:
+      containers:
+      - name: c00
+        image: ubuntu
+        command: ["/bin/bash","-c","while true; do echo hello vss; sleep 5; done;"]
