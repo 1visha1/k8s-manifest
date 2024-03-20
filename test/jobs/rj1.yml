@@ -9,9 +9,8 @@ spec:
     metadata:
       name: testjob
     spec:
-      conatiners:
+      containers:
       - name: counter 
         image: centos:7
         command: ["bin/bash","-c","echo vss; sleep 20"]
-
       restartPolicy: Never
