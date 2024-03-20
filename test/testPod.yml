@@ -8,6 +8,6 @@ metadata:
 
 spec:
   containers:
-    -name: c00
+  - name: c00
     image: ubuntu
     command: ["/bin/bash","-c","while true; do echo hello-vss; sleep 5; done"]
