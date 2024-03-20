@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testjob
+spec:
+  parallelism: 5
+  activeDeadlineSeconds: 10
+  template:
+    metadata:
+      name: testjob
+    spec:
+      conatiners:
+      - name: counter 
+        image: centos:7
+        command: ["bin/bash","-c","echo vss; sleep 20"]
+
+      restartPolicy: Never
